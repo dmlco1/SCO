@@ -69,7 +69,7 @@ with open('DCMs.csv', 'r') as file:
     #plt.plot(x1, y1, color='red')
     plt.plot(x1, step, color='red', label='Máxima Dispersão Residual')
     plt.plot(x1, y2, color='green',linestyle="--", label='Compensação Perfeita de Dispersão')
-    plt.legend(loc="upper left")
+    plt.legend(loc='upper left')
     plt.title('Regra da Máxima Dispersão Residual', color='#2362b7')
     plt.ylabel('Dispersão Acumulada [ps/nm]', color='#1e5cac')
     plt.xlabel('Distância ao Emissor [km]', color='#1e5cac')
