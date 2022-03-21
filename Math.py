@@ -35,11 +35,12 @@ def line_eq(pontos):
     # print("Line Solution is y = {m}x + {c}".format(m=m, c=c))
     return m, c
 
-
-results = []
-for i in vals:
-    print(i)
-    declive, b = line_eq(i)
-    x = ((lambda0*10**9)-b)/declive
-    results.append(x)
-    print(x)
+def interpolation_values():
+    results = []
+    for i in vals:
+        print(i)
+        declive, b = line_eq(i)
+        x = ((lambda0*10**9)-b)/declive
+        results.append(x)
+        print(x)
+    return results
