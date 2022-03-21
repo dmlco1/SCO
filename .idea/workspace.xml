@@ -37,7 +37,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Math">
+  <component name="RunManager" selected="Python.MaxDispertion">
     <configuration name="Math" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SCO" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -124,8 +124,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Math" />
         <item itemvalue="Python.MaxDispertion" />
+        <item itemvalue="Python.Math" />
         <item itemvalue="Python.MaxDispertion" />
       </list>
     </recent_temporary>
