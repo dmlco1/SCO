@@ -40,19 +40,20 @@ def interpolation_values():
     return results
 
 interpolation_data_sheet = interpolation_values()
+print(interpolation_data_sheet)
 
 # Ddcf dos links (objetivo)
 ddcf_obj = [((DresMax*1000)/len(data.lengths_worst_case))-(Dlambda_psnmkm*l) for l in data.lengths_worst_case]
 # print(DresMax*1000)
-print(f"\nDCF dos links (objetivo) {ddcf_obj}\n")
+print(f"\nDCF dos links (objetivo): {ddcf_obj}\n")
 
 # discpersão do DCF escolhido
 escolhido = [interpolation_data_sheet[5], interpolation_data_sheet[4], interpolation_data_sheet[5], interpolation_data_sheet[6], interpolation_data_sheet[6]]
-print(f"DCF escolhido {escolhido}")
+print(f"DCF escolhido: {escolhido}")
 
 # disperção ssmf
 disp_ssmf = [Dlambda_psnmkm * l for l in data.lengths_worst_case]
-print(f"Disp SSMF {disp_ssmf}")
+print(f"Disp SSMF: {disp_ssmf}")
 
 #Dres secção
 
@@ -60,8 +61,8 @@ dres_link = [i+j for i,j in zip(disp_ssmf, escolhido)]
 print(dres_link)
 
 total = sum(dres_link)
-print(f"Total Dres {total}")
+print(f"Total Dres: {total}")
 
 # substimação
 substimacao = [i - j for i,j in zip(escolhido, ddcf_obj)]
-print(substimacao)
+print(f"Substimacao: {substimacao}")
