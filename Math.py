@@ -62,4 +62,6 @@ print(dres_link)
 total = sum(dres_link)
 print(f"Total Dres {total}")
 
-
+# substimação
+substimacao = [i - j for i,j in zip(escolhido, ddcf_obj)]
+print(substimacao)
