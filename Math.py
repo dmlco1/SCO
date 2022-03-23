@@ -36,7 +36,7 @@ def interpolation_values():
         declive, b = line_eq(i)
         x = ((data.lambda1*10**9)-b)/declive
         results.append(x)
-    # print(results)
+    #print(f"dcm{results}")
     return results
 
 
