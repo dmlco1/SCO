@@ -6,10 +6,10 @@ lambda1 = 1545.32e-9  # m
 
 c = 2.9979e8  # m/s
 
-So = 88 # s/km^3
-
-lambda0 = 1317e-9 #m
-
+#So = 88 # s/km^3
+So = 92 # s/km^3
+# lambda0 = 1317e-9 #m
+lambda0 = 1310e-9 #m
 #interpolado com os casos de -val+val
 val_data_sheet = [
       [(-46, 1530), (-49, 1550)],

@@ -36,7 +36,7 @@ def interpolation_values():
         declive, b = line_eq(i)
         x = ((data.lambda1*10**9)-b)/declive
         results.append(x)
-    #print(f"dcm{results}")
+    print(f"dcm{results}")
     return results
 
 
@@ -51,7 +51,7 @@ def dcf_obj():
 # discpersão do DCF escolhido
 def escolhido():
     interpolation_data_sheet = interpolation_values()
-    escolhido = [interpolation_data_sheet[5], interpolation_data_sheet[4], interpolation_data_sheet[5], interpolation_data_sheet[6], interpolation_data_sheet[6]]
+    escolhido = [interpolation_data_sheet[5], interpolation_data_sheet[4], interpolation_data_sheet[5], interpolation_data_sheet[7], interpolation_data_sheet[6]]
     print(f"DCF escolhido {escolhido}")
     return escolhido
 
