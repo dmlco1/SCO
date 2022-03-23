@@ -39,29 +39,43 @@ def interpolation_values():
     # print(results)
     return results
 
-interpolation_data_sheet = interpolation_values()
+
 
 # Ddcf dos links (objetivo)
-ddcf_obj = [((DresMax*1000)/len(data.lengths_worst_case))-(Dlambda_psnmkm*l) for l in data.lengths_worst_case]
-# print(DresMax*1000)
-print(f"\nDCF dos links (objetivo) {ddcf_obj}\n")
+def dcf_obj():
+    ddcf_obj = [((DresMax*1000)/len(data.lengths_worst_case))-(Dlambda_psnmkm*l) for l in data.lengths_worst_case]
+    # print(DresMax*1000)
+    print(f"\nDCF dos links (objetivo) {ddcf_obj}\n")
+    return ddcf_obj
 
 # discpersão do DCF escolhido
-escolhido = [interpolation_data_sheet[5], interpolation_data_sheet[4], interpolation_data_sheet[5], interpolation_data_sheet[6], interpolation_data_sheet[6]]
-print(f"DCF escolhido {escolhido}")
+def escolhido():
+    interpolation_data_sheet = interpolation_values()
+    escolhido = [interpolation_data_sheet[5], interpolation_data_sheet[4], interpolation_data_sheet[5], interpolation_data_sheet[6], interpolation_data_sheet[6]]
+    print(f"DCF escolhido {escolhido}")
+    return escolhido
 
 # disperção ssmf
-disp_ssmf = [Dlambda_psnmkm * l for l in data.lengths_worst_case]
-print(f"Disp SSMF {disp_ssmf}")
+def disp_ssmf():
+    disp_ssmf = [Dlambda_psnmkm * l for l in data.lengths_worst_case]
+    print(f"Disp SSMF {disp_ssmf}")
+    return disp_ssmf
 
 #Dres secção
+def dres_sec():
+    dres_link = [i+j for i,j in zip(disp_ssmf(), escolhido())]
+    print(dres_link)
 
-dres_link = [i+j for i,j in zip(disp_ssmf, escolhido)]
-print(dres_link)
-
-total = sum(dres_link)
-print(f"Total Dres {total}")
+    total = sum(dres_link)
+    print(f"Total Dres {total}")
+    return dres_link, total
 
 # substimação
-substimacao = [i - j for i,j in zip(escolhido, ddcf_obj)]
-print(substimacao)
+def substimacao():
+    substimacao = [i - j for i,j in zip(escolhido(), dcf_obj())]
+    print(substimacao)
+    return substimacao
+
+def table():
+
+    return [dcf_obj(), escolhido(), disp_ssmf(), dres_sec()[0], substimacao(), dres_sec()[1]]
