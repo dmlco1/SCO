@@ -6,7 +6,7 @@ lambda1 = 1545.32e-9  # m
 
 c = 2.9979e8  # m/s
 
-So = 88 # s/m^2
+So = 88 # s/km^3
 
 lambda0 = 1317e-9 #m
 
