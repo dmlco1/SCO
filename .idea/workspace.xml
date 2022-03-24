@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="54a5d1f8-b005-4645-975f-bd3b04fdbe75" name="Default Changelist" comment="less confusing console prints">
+    <list default="true" id="54a5d1f8-b005-4645-975f-bd3b04fdbe75" name="Default Changelist" comment="Nova tabela com todas as seccoes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MaxDispertion.py" beforeDir="false" afterPath="$PROJECT_DIR$/MaxDispertion.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Math.py" beforeDir="false" afterPath="$PROJECT_DIR$/Math.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/data.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -182,7 +182,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648118289740</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Nova tabela com todas as seccoes">
+      <created>1648120256856</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1648120256856</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -203,6 +210,7 @@
     <MESSAGE value="Remover ficheiros desnecessários" />
     <MESSAGE value="fancy output" />
     <MESSAGE value="less confusing console prints" />
-    <option name="LAST_COMMIT_MESSAGE" value="less confusing console prints" />
+    <MESSAGE value="Nova tabela com todas as seccoes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Nova tabela com todas as seccoes" />
   </component>
 </project>

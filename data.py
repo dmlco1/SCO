@@ -22,7 +22,7 @@ val_data_sheet = [
       [(-1518, 1530), (-1633, 1550)]
       ] # valores da datatsheet da draka para interpolar a disperção do dcm
 
-lengths_worst_case = [83, 33, 72, 49, 66, 94] # km
+lengths_section = [83, 33, 72, 49, 66, 94] # km
 
 paths_starting_with_sec_k = [[0,1,2,3,4],
                             [1,2,3,4,5],

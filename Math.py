@@ -43,7 +43,7 @@ def interpolation_values():
 
 # Ddcf dos links (objetivo)
 def dcf_obj():
-    ddcf_obj = [((DresMax*1000)/len(data.lengths_worst_case))-(Dlambda_psnmkm*l) for l in data.lengths_worst_case]
+    ddcf_obj = [((DresMax*1000)/len(data.lengths_section))-(Dlambda_psnmkm*l) for l in data.lengths_section]
     # print(DresMax*1000)
     #print(f"\nDCF dos links (objetivo): {ddcf_obj}\n")
     return ddcf_obj
@@ -58,7 +58,7 @@ def escolhido():
 
 # disperção ssmf
 def disp_ssmf():
-    disp_ssmf = [Dlambda_psnmkm * l for l in data.lengths_worst_case]
+    disp_ssmf = [Dlambda_psnmkm * l for l in data.lengths_section]
     #print(f"Disp SSMF: {disp_ssmf}\n")
     return disp_ssmf
 
