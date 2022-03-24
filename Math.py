@@ -43,7 +43,7 @@ def interpolation_values():
 
 # Ddcf dos links (objetivo)
 def dcf_obj():
-    ddcf_obj = [((DresMax*1000)/len(data.lengths_section))-(Dlambda_psnmkm*l) for l in data.lengths_section]
+    ddcf_obj = [((DresMax*1000)/(len(data.lengths_section)-1))-(Dlambda_psnmkm*l) for l in data.lengths_section]
     # print(DresMax*1000)
     #print(f"\nDCF dos links (objetivo): {ddcf_obj}\n")
     return ddcf_obj

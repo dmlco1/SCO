@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="54a5d1f8-b005-4645-975f-bd3b04fdbe75" name="Default Changelist" comment="Nova tabela com todas as seccoes">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Math.py" beforeDir="false" afterPath="$PROJECT_DIR$/Math.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/data.py" afterDir="false" />
-    </list>
+    <list default="true" id="54a5d1f8-b005-4645-975f-bd3b04fdbe75" name="Default Changelist" comment="fancy" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -189,7 +185,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648120256856</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="fancy">
+      <created>1648137661475</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1648137661475</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -211,6 +214,7 @@
     <MESSAGE value="fancy output" />
     <MESSAGE value="less confusing console prints" />
     <MESSAGE value="Nova tabela com todas as seccoes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Nova tabela com todas as seccoes" />
+    <MESSAGE value="fancy" />
+    <option name="LAST_COMMIT_MESSAGE" value="fancy" />
   </component>
 </project>
