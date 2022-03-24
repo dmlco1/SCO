@@ -40,13 +40,13 @@ total = tab.pop(len(tab)-1)
 
 drespath = [0]*6
 var = 0
+temp = calcs.dres_sec()[0]
 
 for x in data.paths_starting_with_sec_k:
     for i in x:
-        temp = calcs.dres_sec()[0]
         drespath[var]= drespath[var] + temp[i]
     var +=1
-#print(drespath)
+
 drespath.insert(0, "Dres max do path a começar na seção k")
 tab.append(drespath)
 print(tabulate(tab,tablefmt="fancy_grid"))
