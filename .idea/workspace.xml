@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="54a5d1f8-b005-4645-975f-bd3b04fdbe75" name="Default Changelist" comment="Remover ficheiros desnecessários">
-      <change beforePath="$PROJECT_DIR$/.idea/SCO.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SCO.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="54a5d1f8-b005-4645-975f-bd3b04fdbe75" name="Default Changelist" comment="fancy output">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Math.py" beforeDir="false" afterPath="$PROJECT_DIR$/Math.py" afterDir="false" />
     </list>
@@ -39,7 +37,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Math">
+  <component name="RunManager" selected="Python.MaxDispertion">
     <configuration name="Math" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SCO" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -126,8 +124,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Math" />
         <item itemvalue="Python.MaxDispertion" />
+        <item itemvalue="Python.Math" />
         <item itemvalue="Python.MaxDispertion" />
       </list>
     </recent_temporary>
@@ -169,7 +167,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647896504422</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="fancy output">
+      <created>1647983560668</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1647983560668</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -188,6 +193,7 @@
     <MESSAGE value="First commit" />
     <MESSAGE value="Legenda dos graficos" />
     <MESSAGE value="Remover ficheiros desnecessários" />
-    <option name="LAST_COMMIT_MESSAGE" value="Remover ficheiros desnecessários" />
+    <MESSAGE value="fancy output" />
+    <option name="LAST_COMMIT_MESSAGE" value="fancy output" />
   </component>
 </project>
