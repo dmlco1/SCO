@@ -36,7 +36,7 @@ def interpolation_values():
         declive, b = line_eq(i)
         x = ((data.lambda1*10**9)-b)/declive
         results.append(x)
-    print(f"Dispersoes das DCM para 1545,32nm: {results}\n")
+    #print(f"Dispersoes das DCM para 1545,32nm: {results}\n")
     return results
 
 
@@ -45,7 +45,7 @@ def interpolation_values():
 def dcf_obj():
     ddcf_obj = [((DresMax*1000)/len(data.lengths_worst_case))-(Dlambda_psnmkm*l) for l in data.lengths_worst_case]
     # print(DresMax*1000)
-    print(f"\nDCF dos links (objetivo): {ddcf_obj}\n")
+    #print(f"\nDCF dos links (objetivo): {ddcf_obj}\n")
     return ddcf_obj
 
 # discpersão do DCF escolhido
@@ -53,30 +53,29 @@ def escolhido():
     interpolation_data_sheet = interpolation_values()
     escolhido = [interpolation_data_sheet[6], interpolation_data_sheet[3], interpolation_data_sheet[5],
                  interpolation_data_sheet[4], interpolation_data_sheet[5], interpolation_data_sheet[7]]
-    print(f"DCF escolhido: {escolhido}\n")
+    #print(f"DCF escolhido: {escolhido}\n")
     return escolhido
 
 # disperção ssmf
 def disp_ssmf():
     disp_ssmf = [Dlambda_psnmkm * l for l in data.lengths_worst_case]
-    print(f"Disp SSMF: {disp_ssmf}\n")
+    #print(f"Disp SSMF: {disp_ssmf}\n")
     return disp_ssmf
 
 #Dres secção
 def dres_sec():
     dres_link = [i+j for i,j in zip(disp_ssmf(), escolhido())]
-    print(dres_link)
+    #print(dres_link)
 
     total = sum(dres_link)
-    print(f"Total Dres: {total}\n")
+    #print(f"Total Dres: {total}\n")
     return dres_link, total
 
 # substimação
 def substimacao():
     substimacao = [i - j for i,j in zip(escolhido(), dcf_obj())]
-    print(f"Substimacao {substimacao}\n")
+    #print(f"Substimacao {substimacao}\n")
     return substimacao
 
 def table():
-
     return [dcf_obj(), escolhido(), disp_ssmf(), dres_sec()[0], substimacao(), dres_sec()[1]]

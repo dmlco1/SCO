@@ -23,3 +23,10 @@ val_data_sheet = [
       ] # valores da datatsheet da draka para interpolar a disperção do dcm
 
 lengths_worst_case = [83, 33, 72, 49, 66, 94] # km
+
+paths_starting_with_sec_k = [[0,1,2,3,4],
+                            [1,2,3,4,5],
+                            [2,3,4,5,0],
+                            [3,4,5,0,1],
+                            [4,5,0,1,2],
+                            [5,0,1,2,3,]]
