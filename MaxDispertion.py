@@ -26,7 +26,9 @@ step.insert(0, 0)
 
 tab = calcs.table()
 
-tab.insert(0,["ㅤ","Secção 1 (72km)","Secção 2 (49km)","Secção 3 (66km)", "Secção 4 (94km)" ,"Secção 5 (83km)"])
+tab.insert(0,["ㅤ","Secção 1 (83km)","Secção 2 (33km)","Secção 3 (72km)", "Secção 4 (49km)" ,"Secção 5 (66km)",
+              "Secção 6 (94km)"])
+
 tab[1].insert(0, "Dcf Objetivo")
 tab[2].insert(0, "Dres DCM escolhido")
 tab[3].insert(0, "Disperção SSMF")

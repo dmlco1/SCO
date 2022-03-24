@@ -51,7 +51,8 @@ def dcf_obj():
 # discpersão do DCF escolhido
 def escolhido():
     interpolation_data_sheet = interpolation_values()
-    escolhido = [interpolation_data_sheet[5], interpolation_data_sheet[4], interpolation_data_sheet[5], interpolation_data_sheet[7], interpolation_data_sheet[6]]
+    escolhido = [interpolation_data_sheet[6], interpolation_data_sheet[0], interpolation_data_sheet[5],
+                 interpolation_data_sheet[4], interpolation_data_sheet[5], interpolation_data_sheet[7]]
     print(f"DCF escolhido: {escolhido}\n")
     return escolhido
 
