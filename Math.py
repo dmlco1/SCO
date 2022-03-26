@@ -53,11 +53,13 @@ def dcf_obj():
 # discpersão do DCF escolhido
 def escolhido():
     interpolation_data_sheet, names = interpolation_values()
-    escolhido = [interpolation_data_sheet[6], interpolation_data_sheet[3], interpolation_data_sheet[5],
-                 interpolation_data_sheet[4], interpolation_data_sheet[5], interpolation_data_sheet[7]]
-    escolhido_nome = [names[6], names[3], names[5], names[4], names[5], names[7]]
+    escolhido= [interpolation_data_sheet[i] for i in data.chosen_dcms]
+    escolhido_nome = [names[i] for i in data.chosen_dcms]
+    #escolhido = [interpolation_data_sheet[6], interpolation_data_sheet[3], interpolation_data_sheet[5],
+    #             interpolation_data_sheet[4], interpolation_data_sheet[5], interpolation_data_sheet[7]]
+    #escolhido_nome = [names[6], names[3], names[5], names[4], names[5], names[7]]
     #print(f"DCF escolhido: {escolhido}\n")
-    return escolhido,escolhido_nome
+    return escolhido, escolhido_nome
 
 # disperção ssmf
 def disp_ssmf():
