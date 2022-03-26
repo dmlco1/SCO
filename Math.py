@@ -30,14 +30,16 @@ def line_eq(pontos):
 
 
 def interpolation_values():
-    results = []
+    results1 = []
+    results2 = []
     for i in data.val_data_sheet:
         # print(i)
-        declive, b = line_eq(i)
+        declive, b = line_eq(i[0])
         x = ((data.lambda1*10**9)-b)/declive
-        results.append(x)
+        results1.append(x)
+        results2.append(f"DCM-{i[1]}")
     #print(f"Dispersoes das DCM para 1545,32nm: {results}\n")
-    return results
+    return results1,results2
 
 
 
@@ -50,11 +52,12 @@ def dcf_obj():
 
 # discpersão do DCF escolhido
 def escolhido():
-    interpolation_data_sheet = interpolation_values()
+    interpolation_data_sheet, names = interpolation_values()
     escolhido = [interpolation_data_sheet[6], interpolation_data_sheet[3], interpolation_data_sheet[5],
                  interpolation_data_sheet[4], interpolation_data_sheet[5], interpolation_data_sheet[7]]
+    escolhido_nome = [names[6], names[3], names[5], names[4], names[5], names[7]]
     #print(f"DCF escolhido: {escolhido}\n")
-    return escolhido
+    return escolhido,escolhido_nome
 
 # disperção ssmf
 def disp_ssmf():
@@ -64,7 +67,7 @@ def disp_ssmf():
 
 #Dres secção
 def dres_sec():
-    dres_link = [i+j for i,j in zip(disp_ssmf(), escolhido())]
+    dres_link = [i+j for i,j in zip(disp_ssmf(), escolhido()[0])]
     #print(dres_link)
 
     total = sum(dres_link)
@@ -73,9 +76,9 @@ def dres_sec():
 
 # substimação
 def substimacao():
-    substimacao = [i - j for i,j in zip(escolhido(), dcf_obj())]
+    substimacao = [i - j for i,j in zip(escolhido()[0], dcf_obj())]
     #print(f"Substimacao {substimacao}\n")
     return substimacao
 
 def table():
-    return [dcf_obj(), escolhido(), disp_ssmf(), dres_sec()[0], substimacao(), dres_sec()[1]]
+    return [dcf_obj(), escolhido()[1], escolhido()[0], disp_ssmf(), dres_sec()[0], substimacao(), dres_sec()[1]]

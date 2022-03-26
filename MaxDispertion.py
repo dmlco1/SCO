@@ -31,10 +31,11 @@ tab.insert(0,["ㅤ","Secção 1 (83km)","Secção 2 (33km)","Secção 3 (72km)",
               "Secção 6 (94km)"])
 
 tab[1].insert(0, "Dcf Objetivo")
-tab[2].insert(0, "Dres DCM escolhido")
-tab[3].insert(0, "Disperção SSMF")
-tab[4].insert(0, "Dres secção")
-tab[5].insert(0, "Substimação DCM")
+tab[2].insert(0, "DCM escolhido")
+tab[3].insert(0, "Dres DCM escolhido")
+tab[4].insert(0, "Disperção SSMF")
+tab[5].insert(0, "Dres secção")
+tab[6].insert(0, "Substimação DCM")
 
 total = tab.pop(len(tab)-1)
 
@@ -49,7 +50,7 @@ for x in data.paths_starting_with_sec_k:
 
 drespath.insert(0, "Dres max do path a começar na seção k")
 tab.append(drespath)
-print(tabulate(tab,tablefmt="fancy_grid"))
+print(tabulate(tab,tablefmt="fancy_grid", stralign="center"))
 print(f"Total {total}")
 
 
