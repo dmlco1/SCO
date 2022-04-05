@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="54a5d1f8-b005-4645-975f-bd3b04fdbe75" name="Default Changelist" comment="fancy" />
+    <list default="true" id="54a5d1f8-b005-4645-975f-bd3b04fdbe75" name="Default Changelist" comment="Nsec -1 !!!!">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MaxDispertion.py" beforeDir="false" afterPath="$PROJECT_DIR$/MaxDispertion.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,8 +29,8 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="exceleditor.install" value="true" />
-    <property name="settings.editor.selected.configurable" value="MTConfigurable" />
+    <property name="exceleditor.install" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -192,7 +195,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648137661475</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Nsec -1 !!!!">
+      <created>1648138100079</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1648138100079</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -215,6 +225,7 @@
     <MESSAGE value="less confusing console prints" />
     <MESSAGE value="Nova tabela com todas as seccoes" />
     <MESSAGE value="fancy" />
-    <option name="LAST_COMMIT_MESSAGE" value="fancy" />
+    <MESSAGE value="Nsec -1 !!!!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Nsec -1 !!!!" />
   </component>
 </project>
