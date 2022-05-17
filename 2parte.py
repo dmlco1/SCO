@@ -1,6 +1,8 @@
-# emissores
-R_b_canal = 13e9
+import data
+import data2 as d2
 
-b = R_b_canal/2 * 1.20
+
+# emissores
+b = d2.R_b_canal/2 * 1.20
 
 print(b)
