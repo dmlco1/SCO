@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="54a5d1f8-b005-4645-975f-bd3b04fdbe75" name="Default Changelist" comment="Tabela com bandas de frequencia">
+    <list default="true" id="54a5d1f8-b005-4645-975f-bd3b04fdbe75" name="Default Changelist" comment="check commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/2parte.py" beforeDir="false" afterPath="$PROJECT_DIR$/2parte.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data2.py" beforeDir="false" afterPath="$PROJECT_DIR$/data2.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,10 +154,10 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.main" />
-      <item itemvalue="Python.parte2" />
       <item itemvalue="Python.Math" />
       <item itemvalue="Python.MaxDispertion" />
+      <item itemvalue="Python.main" />
+      <item itemvalue="Python.parte2" />
     </list>
     <recent_temporary>
       <list>
@@ -262,7 +260,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652861007378</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="coisas da aula">
+      <created>1652890998480</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1652890998481</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -289,6 +294,7 @@
     <MESSAGE value="tabelas" />
     <MESSAGE value="dudu obriga a fazer coisas que nao quero" />
     <MESSAGE value="Tabela com bandas de frequencia" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tabela com bandas de frequencia" />
+    <MESSAGE value="coisas da aula" />
+    <option name="LAST_COMMIT_MESSAGE" value="coisas da aula" />
   </component>
 </project>

@@ -44,14 +44,16 @@ canais_binf = [d2.canal5_inf + (i - 5) * d2.awgs[0][1] for i in range(1, 6)]
 # print(f"banda inferior: {canais_binf}")
 canais_bsup = [d2.canal5_sup - (i - 5) * d2.awgs[0][1] for i in range(1, 6)]
 # print(f"banda superior: {canais_bsup}")
+canal_medio = (d2.canal1_sup + d2.canal5_inf)/2
 
 tab = []
 
-tab.insert(0, ["", "Banda inferior", "Banda central", "Banda superior"])
-tab.insert(1, ["Id canal", "𝒗 [THz]", "𝒗 [THz]", "𝒗 [THz]"])
+tab.insert(0, ["", "Banda inferior", "Banda inferior","Banda central", "Banda central","Banda superior","Banda superior"])
+tab.insert(1, ["Id canal", "𝒗 [THz]", "λ [m]", "𝒗 [THz]", "λ [m]", "𝒗 [THz]", "λ [m]"])
 
 for i in range(2, 7):
-    tab.insert(i, [f"{i-1}", f"{canais_binf[i-2]}", f"-", f"{canais_bsup[i-2]}"])
+    tab.insert(i, [f"{i-1}", f"{canais_binf[i-2]}",f"{d1.c/canais_binf[i-2]}", f"-",f"-", f"{canais_bsup[i-2]}",f"{d1.c/canais_bsup[i-2]}"])
+
 
 print(tabulate(tab, tablefmt="fancy_grid", stralign="center"))
 
