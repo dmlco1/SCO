@@ -35,7 +35,9 @@ canal5_inf = 194.25e12
 banda_sup = [1545.79e-9, data.c / 1545.79e-9]
 """193.90-(espaçamentoCH/2)"""
 # canal 5 em teras
-canal1_sup = 193.95e12
+canal1_sup = 194e12
+
+canal_medio = 194.1e12
 
 def butval(ordem):
     return (math.py / (2 * ordem)) / math.sin(math.py / (2 * ordem))

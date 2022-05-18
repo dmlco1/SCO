@@ -39,12 +39,15 @@ print("Combinações")
 for i in combinacoes:
     print(i)
 
+# banda de AWG contida na banda do EDFA... AWG limita a banda
 
 canais_binf = [d2.canal5_inf + (i - 5) * d2.awgs[0][1] for i in range(1, 6)]
 # print(f"banda inferior: {canais_binf}")
-canais_bsup = [d2.canal5_sup - (i - 5) * d2.awgs[0][1] for i in range(1, 6)]
+canais_bsup = [d2.canal1_sup - (i - 5) * d2.awgs[0][1] for i in range(1, 6)]
+canais_bsup = canais_bsup[::-1]
 # print(f"banda superior: {canais_bsup}")
-canal_medio = (d2.canal1_sup + d2.canal5_inf)/2
+canais_bmed = [d2.canal_medio - 2*d2.awgs[0][1], d2.canal_medio - d2.awgs[0][1], d2.canal_medio,d2.canal_medio + 2*d2.awgs[0][1], d2.canal_medio + d2.awgs[0][1]]
+
 
 tab = []
 
@@ -52,7 +55,7 @@ tab.insert(0, ["", "Banda inferior", "Banda inferior","Banda central", "Banda ce
 tab.insert(1, ["Id canal", "𝒗 [THz]", "λ [m]", "𝒗 [THz]", "λ [m]", "𝒗 [THz]", "λ [m]"])
 
 for i in range(2, 7):
-    tab.insert(i, [f"{i-1}", f"{canais_binf[i-2]}",f"{d1.c/canais_binf[i-2]}", f"-",f"-", f"{canais_bsup[i-2]}",f"{d1.c/canais_bsup[i-2]}"])
+    tab.insert(i, [f"{i-1}", f"{canais_binf[i-2]}",f"{d1.c/canais_binf[i-2]}", f"{canais_bmed[i-2]}",f"{d1.c/canais_bmed[i-2]}", f"{canais_bsup[i-2]}",f"{d1.c/canais_bsup[i-2]}"])
 
 
 print(tabulate(tab, tablefmt="fancy_grid", stralign="center"))
