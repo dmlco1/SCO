@@ -33,4 +33,4 @@ canal5_inf=194.25e12
 banda_sup=[1545.79e-9, data.c/1545.79e-9]
 """193.90-(espaçamentoCH/2)"""
 #canal 5 em teras
-canal5_sup=193.90e12
+canal5_sup=193.95e12
