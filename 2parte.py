@@ -47,8 +47,13 @@ canais_bsup = [d2.canal1_sup - (i - 5) * d2.awgs[0][1] for i in range(1, 6)]
 canais_bsup = canais_bsup[::-1]
 # print(f"banda superior: {canais_bsup}")
 canais_bmed = [d2.canal_medio - 2*d2.awgs[0][1], d2.canal_medio - d2.awgs[0][1], d2.canal_medio,d2.canal_medio + d2.awgs[0][1], d2.canal_medio + 2*d2.awgs[0][1]]
-
-
+# TODO dudu reve isto... em principio o algoritmo dps deve conseguir meter as bandas médias
+count = -2
+c=[]
+for i in range(1,6):
+    c.append(d2.canal_medio+count*d2.awgs[0][1])
+    count += 1
+print(c)
 tab = []
 
 tab.insert(0, ["", "Banda inferior", "Banda inferior","Banda central", "Banda central","Banda superior","Banda superior"])
