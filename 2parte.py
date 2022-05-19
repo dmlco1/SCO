@@ -98,6 +98,7 @@ tab4 = []
 tab4.insert(0, ["Secao [km]", "Ganho Requerido [dB]"])
 
 perdas_totais_sec = []
+count = 1
 for i in range(5):
     if i == 0:
         print("add")
@@ -115,6 +116,7 @@ for i in range(5):
             perdas_totais_sec[4] = perdas_totais_sec[4] + perdas_drop
     print("Seccao: " + str(d1.lengths_section_longo[i]) + "; Perdas: " + str(perdas_totais_sec[i]))
     tab4.insert(count, [f"{d1.lengths_section_longo[i]}", f"{perdas_totais_sec[i]}"])
+    count += 1
 
 
 
