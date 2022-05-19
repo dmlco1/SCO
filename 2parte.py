@@ -92,12 +92,20 @@ print(perdas_totais)
 print(sum(n_juntas))
 
 perdas_totais_sec = []
-for i in range(5):
+for i in range(6):
     if i == 0:
+        print(i)
+        print("add")
         perdas_t = d2.alfa*d1.lengths_section_longo[i] + (d2.n_con * d2.a_con) + n_juntas[i] * d2.a_junt + d2.dcms[i]+ perdas_drop*0 + perdas_passagem*0 + perdas_add
+    """
     elif i == 4:
+        print(i)
+        print("deop")
         perdas_t = d2.alfa * d1.lengths_section_longo[i] + (d2.n_con * d2.a_con) + n_juntas[i] * d2.a_junt + d2.dcms[i] + perdas_drop + perdas_passagem*0 + perdas_add*0
+    """
     else:
+        print(i)
+        print("pass")
         perdas_t = d2.alfa * d1.lengths_section_longo[i] + (d2.n_con * d2.a_con) + n_juntas[i] * d2.a_junt + d2.dcms[i] + perdas_drop*0 + perdas_passagem + perdas_add*0
     perdas_totais_sec.append(perdas_t)
 
