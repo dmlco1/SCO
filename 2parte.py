@@ -87,9 +87,47 @@ print(tabulate(tab2, tablefmt="fancy_grid", stralign="center"))
 
 # TODO TABELAS por secçaõ
 
-perdas_totais = d2.alfaL + (d2.n_con * d2.a_con) + sum(n_juntas) * d2.a_junt + 2 * d2.dcm80 + 2 * d2.dcm60 + d2.dcm100 + perdas_drop + 4*perdas_passagem + perdas_add
+perdas_totais = d2.alfaL + (5*d2.n_con * d2.a_con) + sum(n_juntas) * d2.a_junt + 2 * d2.dcm80 + 2 * d2.dcm60 + d2.dcm100 + perdas_drop + 4*perdas_passagem + perdas_add
 print(perdas_totais)
+print(sum(n_juntas))
 
+perdas_totais_sec = []
+for i in range(5):
+    if i == 0:
+        perdas_t = d2.alfa*d1.lengths_section_longo[i] + (d2.n_con * d2.a_con) + n_juntas[i] * d2.a_junt + d2.dcms[i]+ perdas_drop*0 + perdas_passagem*0 + perdas_add
+    elif i == 4:
+        perdas_t = d2.alfa * d1.lengths_section_longo[i] + (d2.n_con * d2.a_con) + n_juntas[i] * d2.a_junt + d2.dcms[i] + perdas_drop + perdas_passagem*0 + perdas_add*0
+    else:
+        perdas_t = d2.alfa * d1.lengths_section_longo[i] + (d2.n_con * d2.a_con) + n_juntas[i] * d2.a_junt + d2.dcms[i] + perdas_drop*0 + perdas_passagem + perdas_add*0
+    perdas_totais_sec.append(perdas_t)
+
+print(perdas_totais_sec)
+print(sum(perdas_totais_sec))
+
+
+potencia_emitida = []
+sensibilidade = []
+margem = []
+
+tab3 = []
+tab3.insert(0, ["combinações", "Potencia emitida", "sensibilidade","Perdas de caminho","Penalidade","margem"])
+count = 1
 for i in combinacoes:
-    ps = 10*math.log10((i[0][1] + i[0][1]/10**(i[0][2]/10))/2) #dBm
+    rext = 10**(i[0][2]/10)
+    ps = 10*math.log10((i[0][1] + i[0][1]/rext)/2) #dBm
+    potencia_emitida.append(ps)
+
+    pi = 10*math.log10((rext + 1)/(rext-1) * d2.Q * i[1][2]*10**-9 * math.sqrt(d2.butval(i[1][3])*i[1][5]))
+    sensibilidade.append(pi)
+
     print("potencia emitida " + str(ps))
+    print("sensibilidade " + str(pi))
+
+    m = ps-pi-d2.pen-perdas_totais
+    margem.append(m)
+    print(m)
+    print("Não é preciso pré" if m >= 3 else "é preciso pré")
+    tab3.insert(count,[f"{i[0][0]}-{i[1][0]}",f"{ps}",f"{pi}",f"{perdas_totais}",f"{d2.pen}",f"{m}"])
+    count += 1
+
+print(tabulate(tab3, tablefmt="fancy_grid", stralign="center"))

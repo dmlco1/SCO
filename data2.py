@@ -6,6 +6,14 @@ Rb_canal = 13e9
 # ritmo binario total em bits
 Rb_total = 65e9
 
+#penalidade 1.5 de dispersão cromática 1 dispersão nao linear
+pen = 1.5+1 # dB
+
+# margem
+m = 3 #dB
+
+# fator Q
+Q = 7.65
 # nome, potencia emissor do bit 1(mW), rext(dB),LB(-3dB)GHz, largura de linha(meia potência)MHz, deriva máxiam de frequenciaGHz
 emissor = [['A', 16, 8, 12e9, 10, 4],
            ['B', 13, 9, 10e9, 6, 3],
@@ -53,13 +61,14 @@ L = sum(data.lengths_section_longo) # km
 alfaL = alfa*L
 
 #numero de conetores (2 por secção)
-n_con = 10
+n_con = 2
 # atenuação dos conectores
 a_con = 0.3#dB
 #atenuação de juntas
 a_junt = 0.06 #dB
 
 #perdas de dcms
+dcms = [7.5, 7.5, 6.1, 6.1, 8.9]
 dcm30 = 4.1
 dcm40 = 4.8
 dcm60 = 6.1
