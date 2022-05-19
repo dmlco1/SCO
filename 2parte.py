@@ -112,7 +112,6 @@ for i in range(5):
             i] + perdas_drop * 0 + perdas_passagem + perdas_add * 0
         perdas_totais_sec.append(perdas_t)
         if i == 4:
-            # perdas_t = perdas_drop
             perdas_totais_sec[4] = perdas_totais_sec[4] + perdas_drop
     print("Seccao: " + str(d1.lengths_section_longo[i]) + "; Perdas: " + str(perdas_totais_sec[i]))
     tab4.insert(count, [f"{d1.lengths_section_longo[i]}", f"{perdas_totais_sec[i]}"])
