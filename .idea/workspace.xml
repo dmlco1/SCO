@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="54a5d1f8-b005-4645-975f-bd3b04fdbe75" name="Default Changelist" comment="check commit">
+    <list default="true" id="54a5d1f8-b005-4645-975f-bd3b04fdbe75" name="Default Changelist" comment="dudu obriga a fazer coisas que nao quero">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/2parte.py" beforeDir="false" afterPath="$PROJECT_DIR$/2parte.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Math.py" beforeDir="false" afterPath="$PROJECT_DIR$/Math.py" afterDir="false" />
@@ -271,7 +271,28 @@
       <option name="project" value="LOCAL" />
       <updated>1652890998481</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="dudu obriga a fazer coisas que nao quero">
+      <created>1652913465618</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1652913465618</updated>
+    </task>
+    <task id="LOCAL-00015" summary="dudu obriga a fazer coisas que nao quero">
+      <created>1652915202421</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1652915202421</updated>
+    </task>
+    <task id="LOCAL-00016" summary="dudu obriga a fazer coisas que nao quero">
+      <created>1652916430294</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1652916430294</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -295,9 +316,9 @@
     <MESSAGE value="fancy" />
     <MESSAGE value="Nsec -1 !!!!" />
     <MESSAGE value="tabelas" />
-    <MESSAGE value="dudu obriga a fazer coisas que nao quero" />
     <MESSAGE value="Tabela com bandas de frequencia" />
     <MESSAGE value="coisas da aula" />
-    <option name="LAST_COMMIT_MESSAGE" value="coisas da aula" />
+    <MESSAGE value="dudu obriga a fazer coisas que nao quero" />
+    <option name="LAST_COMMIT_MESSAGE" value="dudu obriga a fazer coisas que nao quero" />
   </component>
 </project>

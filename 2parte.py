@@ -65,5 +65,22 @@ for i in range(2, 7):
 
 print(tabulate(tab, tablefmt="fancy_grid", stralign="center"))
 
-n_juntas = [math.floor(i/2.5) - 1 for i in d1.lengths_section]
+# TODO mandar mail sobre o -1
+n_juntas = [math.floor(i/1.5) - 1 for i in d1.lengths_section_longo]
 print(n_juntas)
+print(sum(d1.lengths_section_longo))
+
+#TODO TABELA DE PERDAS
+
+perdas_passagem = d2.perdas_demux*2 + d2.perda_os
+perdas_drop = d2.perdas_demux + d2.perda_os + d2.a_con
+perdas_add = d2.perdas_demux + d2.perda_os + d2.a_con
+
+# TODO TABELAS por secçaõ
+
+perdas_totais = d2.alfaL + (d2.n_con * d2.a_con) + sum(n_juntas) * d2.a_junt + 2 * d2.dcm80 + 2 * d2.dcm60 + d2.dcm100 + perdas_drop + 4*perdas_passagem + perdas_add
+print(perdas_totais)
+
+for i in combinacoes:
+    ps = 10*math.log10((i[0][1] + i[0][1]/10**(i[0][2]/10))/2) #dBm
+    print("potencia emitida " + str(ps))

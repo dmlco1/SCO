@@ -39,8 +39,39 @@ canal1_sup = 194e12
 
 canal_medio = 194.1e12
 
+#margem do sistema
+m = 3 #dB
+
+# perdas do optical switch
+perda_os = 1.5+0.02 #dB
+
+#atenuação da fibra
+alfa = 0.20+0.02 #dB/km
+#maior caminho
+L = sum(data.lengths_section_longo) # km
+#atenuação da fibra no caminho mais longo
+alfaL = alfa*L
+
+#numero de conetores (2 por secção)
+n_con = 10
+# atenuação dos conectores
+a_con = 0.3#dB
+#atenuação de juntas
+a_junt = 0.06 #dB
+
+#perdas de dcms
+dcm30 = 4.1
+dcm40 = 4.8
+dcm60 = 6.1
+dcm80 = 7.5
+dcm100 = 8.9
+
+# perdas de demux
+perdas_demux = 6.0+0.5
+
+
 def butval(ordem):
-    return (math.py / (2 * ordem)) / math.sin(math.py / (2 * ordem))
+    return (math.pi / (2 * ordem)) / math.sin(math.pi / (2 * ordem))
 
 n2 = 2.6e-20 #mW
 Aeff = 80 #micrometro^2

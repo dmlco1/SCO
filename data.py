@@ -29,6 +29,7 @@ val_data_sheet = [
       ] # valores da datatsheet da draka para interpolar a disperção do dcm
 
 lengths_section = [83, 33, 72, 49, 66, 94] # km
+lengths_section_longo = [83, 72, 49, 66, 94] # km
 # 1º passo secção 3: 5 -> 6
 # 2º passo secção 4: 4 -> 5
 chosen_dcms = [6, 3, 6, 5, 5, 7]
