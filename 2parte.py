@@ -66,7 +66,7 @@ for i in range(2, 7):
 print(tabulate(tab, tablefmt="fancy_grid", stralign="center"))
 
 # TODO mandar mail sobre o -1
-n_juntas = [math.floor(i/1.5) - 1 for i in d1.lengths_section_longo]
+n_juntas = [math.ceil(i/1.5) - 1 for i in d1.lengths_section_longo]
 print(n_juntas)
 print(sum(d1.lengths_section_longo))
 
@@ -75,6 +75,15 @@ print(sum(d1.lengths_section_longo))
 perdas_passagem = d2.perdas_demux*2 + d2.perda_os
 perdas_drop = d2.perdas_demux + d2.perda_os + d2.a_con
 perdas_add = d2.perdas_demux + d2.perda_os + d2.a_con
+
+tab2 = []
+
+tab2.insert(0, ["Modo de Funcionamento", "Perdas Demux", "Perdas de comutadores","Perdas mux", "Perdas conectores","total"])
+tab2.insert(1, ["Passagem", f"{d2.perdas_demux}", f"{d2.perda_os}", f"{d2.perdas_demux}", "--", f"{perdas_passagem}"])
+tab2.insert(2, ["Extração", f"{d2.perdas_demux}", f"{d2.perda_os}", "--", f"{d2.a_con}", f"{perdas_drop}"])
+tab2.insert(3, ["Inserção", "--", f"{d2.perda_os}", f"{d2.perdas_demux}", f"{d2.a_con}", f"{perdas_add}"])
+
+print(tabulate(tab2, tablefmt="fancy_grid", stralign="center"))
 
 # TODO TABELAS por secçaõ
 

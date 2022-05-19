@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="54a5d1f8-b005-4645-975f-bd3b04fdbe75" name="Default Changelist" comment="dudu obriga a fazer coisas que nao quero">
+    <list default="true" id="54a5d1f8-b005-4645-975f-bd3b04fdbe75" name="Default Changelist" comment="vai ja antes que de merda">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/2parte.py" beforeDir="false" afterPath="$PROJECT_DIR$/2parte.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Math.py" beforeDir="false" afterPath="$PROJECT_DIR$/Math.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data2.py" beforeDir="false" afterPath="$PROJECT_DIR$/data2.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -292,7 +289,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652916430294</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="vai ja antes que de merda">
+      <created>1652957356091</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1652957356092</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -319,6 +323,7 @@
     <MESSAGE value="Tabela com bandas de frequencia" />
     <MESSAGE value="coisas da aula" />
     <MESSAGE value="dudu obriga a fazer coisas que nao quero" />
-    <option name="LAST_COMMIT_MESSAGE" value="dudu obriga a fazer coisas que nao quero" />
+    <MESSAGE value="vai ja antes que de merda" />
+    <option name="LAST_COMMIT_MESSAGE" value="vai ja antes que de merda" />
   </component>
 </project>
