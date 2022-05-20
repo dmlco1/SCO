@@ -51,7 +51,7 @@ canal_medio = 194.1e12
 m = 3 #dB
 
 # perdas do optical switch
-perda_os = 1.5+0.02 #dB
+perda_os = 1.5+0.05 #dB
 
 #atenuação da fibra
 alfa = 0.20+0.02 #dB/km
