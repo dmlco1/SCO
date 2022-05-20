@@ -216,7 +216,7 @@ for i in range(len(combinacoes)):
     #print(parterext)
     comboio = 1 + math.sqrt(((4*rext)/((1+rext)**2)) * parterext**-1 * parte1**-1)
     #print(comboio)
-    osnr_req = (parte1)*(parterext) * comboio
+    osnr_req = (parte1)*(parterext) * comboio + d2.a_con
     #print(osnr_req)
 
     pn = 2 * sum(pase_vec)
