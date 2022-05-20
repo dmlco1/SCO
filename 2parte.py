@@ -170,7 +170,9 @@ for i in range(5):
 
 print(tabulate(tab5, tablefmt="fancy_grid", stralign="center"))
 
-ganhos_amp[-1]=ganhos_amp[-1]/2
+ganhos_amp[-1] = ganhos_amp[-1]/2
+ganhos_amp[0] = ganhos_amp[0]/2
+ganhos_amp.insert(1,ganhos_amp[0])
 ganhos_amp.append(ganhos_amp[-1])
 ganhos_amp.append(perdas_passagem+2*d2.a_con)
 
@@ -178,9 +180,9 @@ ganhos_amp.append(perdas_passagem+2*d2.a_con)
 
 tab6 = []
 tab6.insert(0,["AMP", "Ganho [dB]", "Potencia de ruido ASE (1 polarização) [W]"])
-amp = ["sec 83, Pre", "sec 72, Pre", "sec 49, Pre", "sec 66, Pre", "sec 94, Pre", "sec 94, linha", "Pos"]
+amp = ["sec 83, Pre","sec 83, linha", "sec 72, Pre", "sec 49, Pre", "sec 66, Pre", "sec 94, Pre", "sec 94, linha", "Pos"]
 pase_vec = []
-for i in range(7):
+for i in range(8):
     # usar o amplificador oa4500 pois é o amplificador que consegue acomudar estes ganhos
     fn= 10**(d2.oa4500[1]/10)
     g = 10**(ganhos_amp[i]/10)
