@@ -173,6 +173,8 @@ print(tabulate(tab5, tablefmt="fancy_grid", stralign="center"))
 ganhos_amp[-1] = ganhos_amp[-1]/2
 ganhos_amp[0] = ganhos_amp[0]/2
 ganhos_amp.insert(1,ganhos_amp[0])
+ganhos_amp[2] = ganhos_amp[2]/2
+ganhos_amp.insert(3, ganhos_amp[2])
 ganhos_amp.append(ganhos_amp[-1])
 ganhos_amp.append(perdas_passagem+2*d2.a_con)
 
@@ -180,9 +182,9 @@ ganhos_amp.append(perdas_passagem+2*d2.a_con)
 
 tab6 = []
 tab6.insert(0,["AMP", "Ganho [dB]", "Potencia de ruido ASE (1 polarização) [W]"])
-amp = ["sec 83, Pre","Sec 83 linha", "sec 72, Pre", "sec 49, Pre", "sec 66, Pre", "sec 94, Pre", "sec 94, linha", "Pos"]
+amp = ["sec 83, Pre","Sec 83 linha", "sec 72, Pre", "sec 72, Linha", "sec 49, Pre", "sec 66, Pre", "sec 94, Pre", "sec 94, linha", "Pos"]
 pase_vec = []
-for i in range(8):
+for i in range(9):
     # usar o amplificador oa4500 pois é o amplificador que consegue acomudar estes ganhos
     fn= 10**(d2.oa4500[1]/10)
     g = 10**(ganhos_amp[i]/10)
@@ -194,7 +196,7 @@ for i in range(8):
 tab7 = []
 tab7.insert(0 , ["Par", "OSNR [dB]", "OSNR Requerida [dB]", "Valor de penalidade", "Margem"])
 
-comp = [54.864, 28.136, 72, 49, 66, 63, 31]
+comp = [54.864, 28.136, 49.364, 22.366, 49, 66, 63, 31]
 leff = [d2.leff(i) for i in comp]
 
 def potencia():
@@ -202,7 +204,7 @@ def potencia():
     # print(pmax_edfa)
     lambda_menor = 1.543717816683831e-06
     phi_nl = d2.gamma(lambda_menor) * 1000 * (2 * ch - 1)
-    pin = 3/(phi_nl * sum(leff)/1000)
+    pin = ((2*math.pi)/3)/(phi_nl * sum(leff)/1000)
     # print(pin*1000)
     return pin if pin < pmax_edfa else pmax_edfa
 
