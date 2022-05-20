@@ -180,7 +180,7 @@ ganhos_amp.append(perdas_passagem+2*d2.a_con)
 
 tab6 = []
 tab6.insert(0,["AMP", "Ganho [dB]", "Potencia de ruido ASE (1 polarização) [W]"])
-amp = ["sec 83, Pre","sec 83, linha", "sec 72, Pre", "sec 49, Pre", "sec 66, Pre", "sec 94, Pre", "sec 94, linha", "Pos"]
+amp = ["sec 83, Pre","Sec 83 linha", "sec 72, Pre", "sec 49, Pre", "sec 66, Pre", "sec 94, Pre", "sec 94, linha", "Pos"]
 pase_vec = []
 for i in range(8):
     # usar o amplificador oa4500 pois é o amplificador que consegue acomudar estes ganhos
@@ -194,7 +194,8 @@ for i in range(8):
 tab7 = []
 tab7.insert(0 , ["Par", "OSNR [dB]", "OSNR Requerida [dB]", "Valor de penalidade", "Margem"])
 
-leff = [d2.leff(i) for i in d1.lengths_section_longo]
+comp = [54.864, 28.136, 72, 49, 66, 63, 31]
+leff = [d2.leff(i) for i in comp]
 
 def potencia():
     pmax_edfa = (10**(d2.oa4500[2]/10)/ch)*10**-3 # em W
