@@ -79,16 +79,28 @@ dcm100 = 8.9
 perdas_demux = 6.0+0.5
 
 
+# amplificador oa4500
+#ganho dB, fator de ruido, output power dBm,
+oa4500 = [32, 6.9, 21.5]
+
+PLANK_CONST = 6.626e-34
+
+
 def butval(ordem):
     return (math.pi / (2 * ordem)) / math.sin(math.pi / (2 * ordem))
 
-n2 = 2.6e-20 #mW
-Aeff = 80 #micrometro^2
+n2 = 2.6e-20 #m^2W
+Aeff = 80e-12 #metros quadrados
+
+
 
 #pior caso... lambda menor
 def gamma(comp_onda):
     return (2*math.pi*n2)/(comp_onda*Aeff)
 
+
+alfanpm = (0.2/3.434)* 10**-3
 # ver alfa
-def leff(alfa_npm):
-    return (1-math.exp(-alfa_npm))/alfa_npm
+def leff(lsec):
+    return (1-math.exp(-alfanpm*lsec*1000))/alfanpm
+

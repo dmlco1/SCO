@@ -162,8 +162,69 @@ tab5.insert(0, ["secção [km]", "perdas por secção [dB]", "perdas de passagem
 # pos amps compensam perfeitamente a perda de passagem do roadm (perdas de passagme mais connectores)
 # ganho maximo de amplificadores é de 32 dB e um pre-amp que precisa de de 33.9 dB de ganho, logo é preciso 1 amplificador de linha
 
+ganhos_amp=[]
 for i in range(5):
     pp_c = perdas_passagem + 2*d2.a_con
+    ganhos_amp.append(perdas_totais_sec[i])
     tab5.insert(i+1, [f"{d1.lengths_section_longo[i]}", f"{perdas_totais_sec[i]}", f"{pp_c}", f"{perdas_totais_sec[i]+pp_c}", f"{pp_c}", f"{perdas_totais_sec[i]}"])
 
 print(tabulate(tab5, tablefmt="fancy_grid", stralign="center"))
+
+ganhos_amp[-1]=ganhos_amp[-1]/2
+ganhos_amp.append(ganhos_amp[-1])
+ganhos_amp.append(perdas_passagem+2*d2.a_con)
+
+"""===================-Estudo de amp linha SEC=94km-==================="""
+
+tab6 = []
+tab6.insert(0,["AMP", "Ganho [dB]", "Potencia de ruido ASE (1 polarização) [W]"])
+amp = ["sec 83, Pre", "sec 72, Pre", "sec 49, Pre", "sec 66, Pre", "sec 94, Pre", "sec 94, linha", "Pos"]
+pase_vec = []
+for i in range(7):
+    # usar o amplificador oa4500 pois é o amplificador que consegue acomudar estes ganhos
+    fn= 10**(d2.oa4500[1]/10)
+    g = 10**(ganhos_amp[i]/10)
+    v = d1.c/d1.lambda4
+    pase = round((fn/2) * (g - 1) * d2.PLANK_CONST * v * d2.awgs[0][2],9)
+    pase_vec.append(pase)
+
+    tab6.insert(i+1, [f"{amp[i]}", f"{round(ganhos_amp[i],2)}", f"{pase}"])
+tab7 = []
+tab7.insert(0 , ["Par", "OSNR [dB]", "OSNR Requerida [dB]", "Valor de penalidade", "Margem"])
+
+leff = [d2.leff(i) for i in d1.lengths_section_longo]
+
+def potencia():
+    pmax_edfa = (10**(d2.oa4500[2]/10)/ch)*10**-3 # em W
+    # print(pmax_edfa)
+    lambda_menor = 1.543717816683831e-06
+    phi_nl = d2.gamma(lambda_menor) * 1000 * (2 * ch - 1)
+    pin = 3/(phi_nl * sum(leff)/1000)
+    # print(pin*1000)
+    return pin if pin < pmax_edfa else pmax_edfa
+
+for i in range(len(combinacoes)):
+    #print(i)
+    rext = 10 ** (combinacoes[i][0][2] / 10)
+    #print(rext)
+    parte1 = ((d2.Q ** 2) * (d2.butval(combinacoes[i][1][3]) * combinacoes[i][1][5])) / (d2.awgs[0][2])
+    #print(parte1)
+    parterext = ((rext + 1) / (rext - 1))**2
+    #print(parterext)
+    comboio = 1 + math.sqrt(((4*rext)/((1+rext)**2)) * parterext**-1 * parte1**-1)
+    #print(comboio)
+    osnr_req = (parte1)*(parterext) * comboio
+    #print(osnr_req)
+
+    pn = 2 * sum(pase_vec)
+
+    osnr = potencia()/pn # linear
+
+    tab7.insert(i + 1,
+                [f"{combinacoes[i][0][0]}-{combinacoes[i][1][0]}", f"{10 * math.log10(osnr)}", f"{10 * math.log10(osnr_req)}", f"{d2.pen}",
+                 f"{10 * math.log10(osnr)-10 * math.log10(osnr_req)-d2.pen}"])
+
+
+
+print(tabulate(tab6, tablefmt="fancy_grid", stralign="center"))
+print(tabulate(tab7, tablefmt="fancy_grid", stralign="center"))
