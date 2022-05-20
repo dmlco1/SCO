@@ -4,7 +4,7 @@ import math
 from tabulate import tabulate
 import data2 as d2
 import data as d1
-
+"""===================ESCOLHA DE EMISSORES E RECETORES==================="""
 # emissores banda pelo critério de nyquist
 banda = d2.Rb_canal / 2 * 1.20
 print("Banda pelo critério de nyquist: " + str(banda))
@@ -27,17 +27,21 @@ for i in d2.emissor:
                 emissores.remove(i)
     else:
         emissores.remove(i)
-print(emissores)
+# print(emissores)
 
 for i in d2.recetor:
     if i[5] < banda:
         recetores.remove(i)
-print(recetores)
+# print(recetores)
 
 combinacoes = [(x, y) for x in emissores for y in recetores]
-print("Combinações")
-for i in combinacoes:
-    print(i)
+# print("Combinações")
+# for i in combinacoes:
+#   print(i)
+
+
+""""===================Dimensionamento de canais ==================="""
+
 
 # banda de AWG contida na banda do EDFA... AWG limita a banda
 
@@ -54,7 +58,7 @@ c = []
 for i in range(1, 6):
     c.append(d2.canal_medio + count * d2.awgs[0][1])
     count += 1
-print(c)
+# print(c)
 tab = []
 
 tab.insert(0, ["", "Banda inferior", "Banda inferior", "Banda central", "Banda central", "Banda superior",
@@ -67,12 +71,14 @@ for i in range(2, 7):
 
 print(tabulate(tab, tablefmt="fancy_grid", stralign="center"))
 
-# TODO mandar mail sobre o -1
-n_juntas = [math.ceil(i / 1.5) - 1 for i in d1.lengths_section_longo]
-print(n_juntas)
-print(sum(d1.lengths_section_longo))
 
-# TODO TABELA DE PERDAS
+"""===================EStudo de pre amp==================="""
+
+
+n_juntas = [math.ceil(i / 1.5) - 1 for i in d1.lengths_section_longo]
+# print(n_juntas)
+# print(sum(d1.lengths_section_longo))
+
 
 perdas_passagem = d2.perdas_demux * 2 + d2.perda_os
 perdas_drop = d2.perdas_demux + d2.perda_os + d2.a_con
@@ -88,42 +94,36 @@ tab2.insert(3, ["Inserção", "--", f"{d2.perda_os}", f"{d2.perdas_demux}", f"{d
 
 print(tabulate(tab2, tablefmt="fancy_grid", stralign="center"))
 
-# TODO TABELAS por secçaõ
 
 perdas_totais = d2.alfaL + (5 * d2.n_con * d2.a_con) + sum(
     n_juntas) * d2.a_junt + 2 * d2.dcm80 + 2 * d2.dcm60 + d2.dcm100 + perdas_drop + 4 * perdas_passagem + perdas_add
-print(perdas_totais)
+# print(perdas_totais)
 
 tab4 = []
-tab4.insert(0, ["Secao [km]", "Ganho Requerido [dB]"])
+tab4.insert(0, ["Secao [km]", "Perdas por secção [dB]"])
 
 perdas_totais_sec = []
 count = 1
 for i in range(5):
     if i == 0:
-        print("add")
+        # print("add")
         perdas_t = d2.alfa * d1.lengths_section_longo[i] + (d2.n_con * d2.a_con) + n_juntas[i] * d2.a_junt + d2.dcms[
-            i] + perdas_drop * 0 + perdas_passagem * 0 + perdas_add
+            i]  # + perdas_drop * 0 + perdas_passagem * 0 + perdas_add
         perdas_totais_sec.append(perdas_t)
 
     else:
-        print("pass")
+        # print("pass")
         perdas_t = d2.alfa * d1.lengths_section_longo[i] + (d2.n_con * d2.a_con) + n_juntas[i] * d2.a_junt + d2.dcms[
-            i] + perdas_drop * 0 + perdas_passagem + perdas_add * 0
+            i]  # + perdas_drop * 0 + perdas_passagem + perdas_add * 0
         perdas_totais_sec.append(perdas_t)
         if i == 4:
             # perdas_t = perdas_drop
-            perdas_totais_sec[4] = perdas_totais_sec[4] + perdas_drop
-    print("Seccao: " + str(d1.lengths_section_longo[i]) + "; Perdas: " + str(perdas_totais_sec[i]))
+            perdas_totais_sec[4] = perdas_totais_sec[4]  # + perdas_drop
+
+    # print("Seccao: " + str(d1.lengths_section_longo[i]) + "; Perdas: " + str(perdas_totais_sec[i]))
     tab4.insert(count, [f"{d1.lengths_section_longo[i]}", f"{perdas_totais_sec[i]}"])
     count += 1
 
-
-
-print(tabulate(tab4, tablefmt="fancy_grid", stralign="center"))
-
-print(perdas_totais_sec)
-print(sum(perdas_totais_sec))
 
 potencia_emitida = []
 sensibilidade = []
@@ -140,14 +140,30 @@ for i in combinacoes:
     pi = 10 * math.log10((rext + 1) / (rext - 1) * d2.Q * i[1][2] * 10 ** -9 * math.sqrt(d2.butval(i[1][3]) * i[1][5]))
     sensibilidade.append(pi)
 
-    print("potencia emitida " + str(ps))
-    print("sensibilidade " + str(pi))
+    # print("potencia emitida " + str(ps))
+    # print("sensibilidade " + str(pi))
 
     m = ps - pi - d2.pen - perdas_totais
     margem.append(m)
-    print(m)
-    print("Não é preciso pré" if m >= 3 else "é preciso pré")
+    # print(m)
+    # print("Não é preciso pré" if m >= 3 else "é preciso pré")
     tab3.insert(count, [f"{i[0][0]}-{i[1][0]}", f"{ps}", f"{pi}", f"{perdas_totais}", f"{d2.pen}", f"{m}"])
     count += 1
 
 print(tabulate(tab3, tablefmt="fancy_grid", stralign="center"))
+print(tabulate(tab4, tablefmt="fancy_grid", stralign="center"))
+
+"""===================Estudo de pos amp==================="""
+
+# sec, perdas por secção, perdas de passagem + con, perdas totais, ganho do pos, ganho requirido do pre
+tab5 = []
+tab5.insert(0, ["secção [km]", "perdas por secção [dB]", "perdas de passagem + con [dB]", "Perdas totais [dB]", "Ganho do pos [dB]", "Ganho requirido ao pre [dB]"])
+
+# pos amps compensam perfeitamente a perda de passagem do roadm (perdas de passagme mais connectores)
+# ganho maximo de amplificadores é de 32 dB e um pre-amp que precisa de de 33.9 dB de ganho, logo é preciso 1 amplificador de linha
+
+for i in range(5):
+    pp_c = perdas_passagem + 2*d2.a_con
+    tab5.insert(i+1, [f"{d1.lengths_section_longo[i]}", f"{perdas_totais_sec[i]}", f"{pp_c}", f"{perdas_totais_sec[i]+pp_c}", f"{pp_c}", f"{perdas_totais_sec[i]}"])
+
+print(tabulate(tab5, tablefmt="fancy_grid", stralign="center"))
