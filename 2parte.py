@@ -189,7 +189,7 @@ for i in range(9):
     # usar o amplificador oa4500 pois é o amplificador que consegue acomudar estes ganhos
     fn= 10**(d2.oa4500[1]/10)
     g = 10**(ganhos_amp[i]/10)
-    v = d1.c/d1.lambda4
+    v = d1.c/1.5609997396511326e-06 #d1.lambda4 lambda mais pequeno implica pior caso
     pase = round((fn/2) * (g - 1) * d2.PLANK_CONST * v * d2.awgs[0][2],9)
     pase_vec.append(pase)
 
