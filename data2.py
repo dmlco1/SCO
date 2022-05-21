@@ -101,7 +101,7 @@ def gamma(comp_onda):
     return (2*math.pi*n2)/(comp_onda*Aeff)
 
 
-alfanpm = (0.2/3.434)* 10**-3
+alfanpm = (0.2/4.343)* 10**-3
 # ver alfa
 def leff(lsec):
     return (1-math.exp(-alfanpm*lsec*1000))/alfanpm

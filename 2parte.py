@@ -165,7 +165,7 @@ tab5.insert(0, ["secção [km]", "perdas por secção [dB]", "perdas de passagem
 ganhos_amp=[]
 for i in range(5):
 
-    pp_c = perdas_passagem + d2.a_con
+    pp_c = perdas_passagem + 2*d2.a_con
     ganhos_amp.append(perdas_totais_sec[i])
     tab5.insert(i+1, [f"{d1.lengths_section_longo[i]}", f"{perdas_totais_sec[i]}", f"{pp_c}", f"{perdas_totais_sec[i]+pp_c}", f"{pp_c}", f"{perdas_totais_sec[i]}"])
 
@@ -177,7 +177,7 @@ ganhos_amp.insert(1,ganhos_amp[0])
 ganhos_amp[2] = ganhos_amp[2]/2 + 2*d2.a_con
 ganhos_amp.insert(3, ganhos_amp[2])
 ganhos_amp.append(ganhos_amp[-1])
-ganhos_amp.append(perdas_passagem+d2.a_con)
+ganhos_amp.append(perdas_passagem+2*d2.a_con)
 
 """===================-Estudo de amp linha SEC=94km-==================="""
 
@@ -193,10 +193,11 @@ for i in range(9):
     pase = round((fn/2) * (g - 1) * d2.PLANK_CONST * v * d2.awgs[0][2],9)
     pase_vec.append(pase)
 
+
     tab6.insert(i+1, [f"{amp[i]}", f"{round(ganhos_amp[i],2)}", f"{pase}"])
 tab7 = []
 tab7.insert(0 , ["Par", "OSNR [dB]", "OSNR Requerida [dB]", "Valor de penalidade", "Margem"])
-
+#print(sum(pase_vec)*2)
 comp = [54.864, 28.136, 49.364, 22.366, 49, 66, 63, 31]
 leff = [d2.leff(i) for i in comp]
 
@@ -206,7 +207,8 @@ def potencia():
     lambda_menor = 1.5609997396511326e-06
     phi_nl = d2.gamma(lambda_menor) * 1000 * (2 * ch - 1)
     pin = ((2*math.pi)/3)/(phi_nl * sum(leff)/1000)
-    print(pin*1000)
+    #print(pin*1000)
+    #print(pmax_edfa)
     return pin if pin < pmax_edfa else pmax_edfa
 
 for i in range(len(combinacoes)):
@@ -235,5 +237,6 @@ for i in range(len(combinacoes)):
 print(tabulate(tab6, tablefmt="fancy_grid", stralign="center"))
 print(tabulate(tab7, tablefmt="fancy_grid", stralign="center"))
 
-print(d2.banda_inf[1])
-print(d2.banda_sup[1])
+#print(d2.banda_inf[1])
+#print(d2.banda_sup[1])
+print(d2.alfanpm)
