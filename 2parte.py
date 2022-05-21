@@ -21,13 +21,13 @@ for i in d2.emissor:
     if i[3] >= banda:
         for j in awg:
             if 2 * d2.Rb_canal + 2 * i[5] <= j[2] <= j[1]:
-                # print(j[0] + " pode ser usado")
+                print(j[0] + " pode ser usado")
                 pass
             else:
                 emissores.remove(i)
     else:
         emissores.remove(i)
-# print(emissores)
+print(emissores)
 
 for i in d2.recetor:
     if i[5] < banda:
@@ -203,10 +203,10 @@ leff = [d2.leff(i) for i in comp]
 def potencia():
     pmax_edfa = (10**(d2.oa4500[2]/10)/ch)*10**-3 # em W
     # print(pmax_edfa)
-    lambda_menor = 1.543717816683831e-06
+    lambda_menor = 1.5609997396511326e-06
     phi_nl = d2.gamma(lambda_menor) * 1000 * (2 * ch - 1)
     pin = ((2*math.pi)/3)/(phi_nl * sum(leff)/1000)
-    # print(pin*1000)
+    print(pin*1000)
     return pin if pin < pmax_edfa else pmax_edfa
 
 for i in range(len(combinacoes)):
@@ -234,3 +234,6 @@ for i in range(len(combinacoes)):
 
 print(tabulate(tab6, tablefmt="fancy_grid", stralign="center"))
 print(tabulate(tab7, tablefmt="fancy_grid", stralign="center"))
+
+print(d2.banda_inf[1])
+print(d2.banda_sup[1])

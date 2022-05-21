@@ -5,7 +5,7 @@ import data
 
 
 # dlambda para a nossa frequencia
-Dlambda = ((data.So/4) * (data.lambda3 - (data.lambda0**4/data.lambda3**3)))
+Dlambda = ((data.So/4) * (data.lambda4 - (data.lambda0**4/data.lambda4**3)))
 Dlambda_psnmkm = Dlambda *(1e12/(1e9*1e-3))
 print(f"- Dlambda {Dlambda}")
 print(f"- Dlambda_psnmkm {Dlambda_psnmkm}")
@@ -17,7 +17,7 @@ print(f"- Fator de mérito {fatorMeritoMax}")
 #Dres máximo
 # DresMax em s/m = 0.582039 ...
 # DresMax em ps/nm = 582.039 ...
-DresMax = (fatorMeritoMax * (2 * math.pi) * data.c) / ((data.ritmoBinario ** 2) * (data.lambda3 ** 2))  # s/m
+DresMax = (fatorMeritoMax * (2 * math.pi) * data.c) / ((data.ritmoBinario ** 2) * (data.lambda4 ** 2))  # s/m
 print(f"- DresMax {DresMax}\n")
 
 # interpolação
@@ -35,7 +35,7 @@ def interpolation_values():
     for i in data.val_data_sheet:
         # print(i)
         declive, b = line_eq(i[0])
-        x = round(((data.lambda3*10**9)-b)/declive,2)
+        x = round(((data.lambda4*10**9)-b)/declive,2)
         results1.append(x)
         results2.append(f"DCM-{i[1]}")
     print(f"Dispersoes das DCM para 1545,32nm: {results1}\n")

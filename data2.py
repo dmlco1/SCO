@@ -35,17 +35,19 @@ recetor = [['A', 75, 15, 4, -4, 9e9],
 # como so temos 5 canais vamos usar o AWG50
 awgs = [['AWG50', 50e9, 35e9],
         ['AWG100', 100e9, 75e9]]
+
+# calculados com a banda limitante da EDFA, sendo que AWG usa banda C
 # banda inferior (lambda min, freq max)
-banda_inf = [1543e-9, data.c / 1543e-9]
+banda_inf = [1530e-9, data.c / 1530e-9]
 # canal5 em teras
-canal5_inf = 194.25e12
+canal5_inf = 195.90e12
 # banda superior (lambda max, freq min)
-banda_sup = [1545.79e-9, data.c / 1545.79e-9]
+banda_sup = [1563e-9, data.c / 1563e-9]
 """193.90-(espaçamentoCH/2)"""
 # canal 5 em teras
-canal1_sup = 194e12
+canal1_sup = 191.85e12
 
-canal_medio = 194.1e12
+canal_medio = 193.85e12
 
 #margem do sistema
 m = 3 #dB
