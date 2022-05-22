@@ -182,7 +182,7 @@ ganhos_amp.append(ganhos_amp[-1])
 ganhos_amp.append(perdas_passagem+2*d2.a_con)
 print(ganhos_amp)
 
-"""===================-Estudo de amp linha SEC=94km-==================="""
+"""===================-Estudo de amp linha-==================="""
 
 tab6 = []
 tab6.insert(0,["AMP", "Ganho [dB]", "Potencia de ruido ASE (1 polarização) [W]"])
@@ -207,7 +207,7 @@ leff = [d2.leff(i) for i in comp]
 def potencia():
     pmax_edfa = (10**(d2.oa4500[2]/10)/ch)*10**-3 # em W
     # print(pmax_edfa)
-    lambda_menor = 1.5609997396511326e-06
+    lambda_menor = 1.543717816683831e-06
     phi_nl = d2.gamma(lambda_menor) * 1000 * (2 * ch - 1)
     pin = ((2*math.pi)/3)/(phi_nl * sum(leff)/1000)
     #print(pin*1000)
