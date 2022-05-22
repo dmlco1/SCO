@@ -171,12 +171,12 @@ for i in range(5):
 
 print(tabulate(tab5, tablefmt="fancy_grid", stralign="center"))
 
-ganhos_amp[-1] = ganhos_amp[-1]/2 + 2*d2.a_con
-ganhos_amp[-2] = ganhos_amp[-2]/2 + 2*d2.a_con
+ganhos_amp[-1] = ganhos_amp[-1]/2 + d2.a_con
+ganhos_amp[-2] = ganhos_amp[-2]/2 + d2.a_con
 ganhos_amp.insert(-1, ganhos_amp[-2])
-ganhos_amp[0] = ganhos_amp[0]/2 + 2*d2.a_con
+ganhos_amp[0] = ganhos_amp[0]/2 + d2.a_con
 ganhos_amp.insert(1,ganhos_amp[0])
-ganhos_amp[2] = ganhos_amp[2]/2 + 2*d2.a_con
+ganhos_amp[2] = ganhos_amp[2]/2 + d2.a_con
 ganhos_amp.insert(3, ganhos_amp[2])
 ganhos_amp.append(ganhos_amp[-1])
 ganhos_amp.append(perdas_passagem+2*d2.a_con)
