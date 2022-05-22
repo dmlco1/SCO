@@ -172,20 +172,23 @@ for i in range(5):
 print(tabulate(tab5, tablefmt="fancy_grid", stralign="center"))
 
 ganhos_amp[-1] = ganhos_amp[-1]/2 + 2*d2.a_con
+ganhos_amp[-2] = ganhos_amp[-2]/2 + 2*d2.a_con
+ganhos_amp.insert(-1, ganhos_amp[-2])
 ganhos_amp[0] = ganhos_amp[0]/2 + 2*d2.a_con
 ganhos_amp.insert(1,ganhos_amp[0])
 ganhos_amp[2] = ganhos_amp[2]/2 + 2*d2.a_con
 ganhos_amp.insert(3, ganhos_amp[2])
 ganhos_amp.append(ganhos_amp[-1])
 ganhos_amp.append(perdas_passagem+2*d2.a_con)
+print(ganhos_amp)
 
 """===================-Estudo de amp linha SEC=94km-==================="""
 
 tab6 = []
 tab6.insert(0,["AMP", "Ganho [dB]", "Potencia de ruido ASE (1 polarização) [W]"])
-amp = ["sec 83, Pre","Sec 83 linha", "sec 72, Pre", "sec 72, Linha", "sec 49, Pre", "sec 66, Pre", "sec 94, Pre", "sec 94, linha", "Pos"]
+amp = ["sec 83, Pre","Sec 83 linha", "sec 72, Pre", "sec 72, Linha", "sec 49, Pre", "sec 66, Pre","sec 66, linha", "sec 94, Pre", "sec 94, linha", "Pos"]
 pase_vec = []
-for i in range(9):
+for i in range(10):
     # usar o amplificador oa4500 pois é o amplificador que consegue acomudar estes ganhos
     fn= 10**(d2.oa4500[1]/10)
     g = 10**(ganhos_amp[i]/10)
@@ -198,7 +201,7 @@ for i in range(9):
 tab7 = []
 tab7.insert(0 , ["Par", "OSNR [dB]", "OSNR Requerida [dB]", "Valor de penalidade", "Margem"])
 #print(sum(pase_vec)*2)
-comp = [54.864, 28.136, 49.364, 22.366, 49, 66, 63, 31]
+comp = [54.864, 28.136, 49.364, 22.366, 49, 43.692, 22.308, 63, 31]
 leff = [d2.leff(i) for i in comp]
 
 def potencia():
@@ -219,7 +222,7 @@ for i in range(len(combinacoes)):
     #print(parte1)
     parterext = ((rext + 1) / (rext - 1))**2
     #print(parterext)
-    comboio = 1 + math.sqrt(((4*rext)/((1+rext)**2)) * parterext**-1 * parte1**-1)
+    comboio = 1 + math.sqrt(((4*rext)/((1+rext)**2)) + (parterext**-1 * parte1**-1))
     #print(comboio)
     osnr_req = (parte1)*(parterext) * comboio + d2.a_con
     #print(osnr_req)
