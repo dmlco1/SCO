@@ -167,7 +167,7 @@ for i in range(5):
 
     pp_c = perdas_passagem + 2*d2.a_con
     ganhos_amp.append(perdas_totais_sec[i])
-    tab5.insert(i+1, [f"{d1.lengths_section_longo[i]}", f"{perdas_totais_sec[i]}", f"{pp_c}", f"{perdas_totais_sec[i]+pp_c}", f"{pp_c}", f"{perdas_totais_sec[i]}"])
+    tab5.insert(i+1, [f"{d1.lengths_section_longo[i]}", f"{perdas_totais_sec[i]}", f"{pp_c+ d2.a_con}", f"{perdas_totais_sec[i]+pp_c}", f"{pp_c + d2.a_con}", f"{perdas_totais_sec[i]}"])
 
 print(tabulate(tab5, tablefmt="fancy_grid", stralign="center"))
 
@@ -179,7 +179,7 @@ ganhos_amp.insert(1,ganhos_amp[0])
 ganhos_amp[2] = ganhos_amp[2]/2 + d2.a_con
 ganhos_amp.insert(3, ganhos_amp[2])
 ganhos_amp.append(ganhos_amp[-1])
-ganhos_amp.append(perdas_passagem+2*d2.a_con)
+ganhos_amp.append(perdas_passagem+3*d2.a_con)
 print(ganhos_amp)
 
 """===================-Estudo de amp linha-==================="""
