@@ -178,19 +178,22 @@ ganhos_amp[0] = ganhos_amp[0]/2 + d2.a_con
 ganhos_amp.insert(1,ganhos_amp[0])
 ganhos_amp[2] = ganhos_amp[2]/2 + d2.a_con
 ganhos_amp.insert(3, ganhos_amp[2])
+ganhos_amp[4] = ganhos_amp[4]/2 + d2.a_con
+ganhos_amp.insert(5, ganhos_amp[4])
 ganhos_amp.append(ganhos_amp[-1])
 ganhos_amp.append(perdas_passagem+3*d2.a_con)
+
 print(ganhos_amp)
 
 """===================-Estudo de amp linha-==================="""
 
 tab6 = []
 tab6.insert(0,["AMP", "Ganho [dB]", "Potencia de ruido ASE (1 polarização) [W]"])
-amp = ["sec 83, Pre","Sec 83 linha", "sec 72, Pre", "sec 72, Linha", "sec 49, Pre", "sec 66, Pre","sec 66, linha", "sec 94, Pre", "sec 94, linha", "Pos"]
+amp = ["sec 83, Pre","Sec 83 linha", "sec 72, Pre", "sec 72, Linha", "sec 49, Pre","sec 49, linha", "sec 66, Pre","sec 66, linha", "sec 94, Pre", "sec 94, linha", "Pos"]
 pase_vec = []
-for i in range(10):
-    # usar o amplificador oa4500 pois é o amplificador que consegue acomudar estes ganhos
-    fn= 10**(d2.oa4500[1]/10)
+for i in range(11):
+    # usar o amplificador oa4500 (mudamos para o outro que tem menos perdas) pois é o amplificador que consegue acomudar estes ganhos
+    fn= 10**(d2.oa3500[1]/10)
     g = 10**(ganhos_amp[i]/10)
     v = d1.c/1.5609997396511326e-06 #d1.lambda4 lambda mais pequeno implica pior caso
     pase = round((fn/2) * (g - 1) * d2.PLANK_CONST * v * d2.awgs[0][2],9)
@@ -201,11 +204,11 @@ for i in range(10):
 tab7 = []
 tab7.insert(0 , ["Par", "OSNR [dB]", "OSNR Requerida [dB]", "Valor de penalidade", "Margem"])
 #print(sum(pase_vec)*2)
-comp = [54.864, 28.136, 49.364, 22.366, 49, 43.692, 22.308, 63, 31]
+comp = [54.864, 28.136, 49.364, 22.366, 35.182, 12.828, 43.692, 22.308, 63, 31]
 leff = [d2.leff(i) for i in comp]
 
 def potencia():
-    pmax_edfa = (10**(d2.oa4500[2]/10)/ch)*10**-3 # em W
+    pmax_edfa = (10**(d2.oa3500[2]/10)/ch)*10**-3 # em W
     # print(pmax_edfa)
     lambda_menor = 1.543717816683831e-06
     phi_nl = d2.gamma(lambda_menor) * 1000 * (2 * ch - 1)
@@ -227,7 +230,7 @@ for i in range(len(combinacoes)):
     osnr_req = (parte1)*(parterext) * comboio + d2.a_con
     #print(osnr_req)
 
-    pn = 2 * sum(pase_vec)
+    pn = 2 * (sum(pase_vec) + 4*pase_vec[-1])
 
     osnr = potencia()/pn # linear
 

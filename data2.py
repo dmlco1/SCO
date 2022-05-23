@@ -83,6 +83,7 @@ perdas_demux = 6.0+0.5
 
 # amplificador oa4500
 #ganho dB, fator de ruido, output power dBm,
+oa3500 = [23, 6.0, 17]
 oa4500 = [32, 6.9, 21.5]
 
 PLANK_CONST = 6.626e-34
