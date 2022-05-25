@@ -246,3 +246,8 @@ print(tabulate(tab7, tablefmt="fancy_grid", stralign="center"))
 #print(d2.banda_inf[1])
 #print(d2.banda_sup[1])
 print(d2.alfanpm)
+
+print(f'inf: {d2.banda_inf[1]}')
+print(f'sup: {d2.banda_sup[1]}')
+
+print(d2.banda_inf[1])

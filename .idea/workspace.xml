@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="54a5d1f8-b005-4645-975f-bd3b04fdbe75" name="Default Changelist" comment="vai ja antes que de merda">
+    <list default="true" id="54a5d1f8-b005-4645-975f-bd3b04fdbe75" name="Default Changelist" comment="dimensionamento de bandas #1300">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/2parte.py" beforeDir="false" afterPath="$PROJECT_DIR$/2parte.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data2.py" beforeDir="false" afterPath="$PROJECT_DIR$/data2.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -296,7 +300,42 @@
       <option name="project" value="LOCAL" />
       <updated>1652957356092</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="perdas por seccao... nem sei se ta feito ou nao">
+      <created>1652978868187</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1652978868187</updated>
+    </task>
+    <task id="LOCAL-00019" summary="agora sim a tabela ta feita">
+      <created>1652979033148</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1652979033148</updated>
+    </task>
+    <task id="LOCAL-00020" summary="como diz o anderson: stuff">
+      <created>1652979119334</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1652979119334</updated>
+    </task>
+    <task id="LOCAL-00021" summary="provavelmente feito...">
+      <created>1653062430162</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1653062430162</updated>
+    </task>
+    <task id="LOCAL-00022" summary="dimensionamento de bandas #1300">
+      <created>1653338605951</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1653338605951</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -309,6 +348,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First commit" />
@@ -324,6 +364,11 @@
     <MESSAGE value="coisas da aula" />
     <MESSAGE value="dudu obriga a fazer coisas que nao quero" />
     <MESSAGE value="vai ja antes que de merda" />
-    <option name="LAST_COMMIT_MESSAGE" value="vai ja antes que de merda" />
+    <MESSAGE value="perdas por seccao... nem sei se ta feito ou nao" />
+    <MESSAGE value="agora sim a tabela ta feita" />
+    <MESSAGE value="como diz o anderson: stuff" />
+    <MESSAGE value="provavelmente feito..." />
+    <MESSAGE value="dimensionamento de bandas #1300" />
+    <option name="LAST_COMMIT_MESSAGE" value="dimensionamento de bandas #1300" />
   </component>
 </project>
