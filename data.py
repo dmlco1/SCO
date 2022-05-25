@@ -5,11 +5,11 @@ ritmoBinario = 13e9  # bps
 lambda1 = 1545.32e-9  # m
 
 #lambda banda inferior
-lambda2 = 1544.91110538521e-9
+lambda2 = 1544.5131375579598e-09
 #lambda banda meio
-lambda3 = 1545.3092783505154e-9
+lambda3 = 1545.3092783505154e-09
 #lambda banda superior
-lambda4 = 1545.3092783505154e-9
+lambda4 = 1545.707656612529e-09
 c = 2.9979e8  # m/s
 
 #So = 88 # s/km^3

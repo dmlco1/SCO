@@ -189,13 +189,20 @@ print(ganhos_amp)
 
 tab6 = []
 tab6.insert(0,["AMP", "Ganho [dB]", "Potencia de ruido ASE (1 polarização) [W]"])
-amp = ["sec 83, Pre","Sec 83 linha", "sec 72, Pre", "sec 72, Linha", "sec 49, Pre","sec 49, linha", "sec 66, Pre","sec 66, linha", "sec 94, Pre", "sec 94, linha", "Pos"]
+#amp = ["sec 83, Pre", "sec 72, Pre", "sec 49, Pre", "sec 66, Pre", "sec 94, Pre", "sec 94, linha", "Pos"]
+#amp = ["sec 83, Pre","Sec 83 linha", "sec 72, Pre", "sec 49, Pre", "sec 66, Pre","sec 94, Pre", "sec 94, linha", "Pos"]
+#amp = ["sec 83, Pre","Sec 83 linha", "sec 72, Pre", "sec 72, Linha", "sec 49, Pre", "sec 66, Pre", "sec 94, Pre", "sec 94, linha", "Pos"]
+#amp = ["sec 83, Pre","Sec 83 linha", "sec 72, Pre", "sec 72, Linha", "sec 49, Pre", "sec 66, Pre","sec 66, linha", "sec 94, Pre", "sec 94, linha", "Pos"]
+amp = ["sec 83, Pre", "Sec 83 linha", "sec 72, Pre", "sec 72, Linha", "sec 49, Pre", "sec 49, linha", "sec 66, Pre", "sec 66, linha", "sec 94, Pre", "sec 94, linha", "Pos"]
+
 pase_vec = []
+
+
 for i in range(11):
     # usar o amplificador oa4500 (mudamos para o outro que tem menos perdas) pois é o amplificador que consegue acomudar estes ganhos
     fn= 10**(d2.oa3500[1]/10)
     g = 10**(ganhos_amp[i]/10)
-    v = d1.c/1.5609997396511326e-06 #d1.lambda4 lambda mais pequeno implica pior caso
+    v = d1.c/1.5441153747102755e-06 #d1.lambda4 lambda mais pequeno implica pior caso
     pase = round((fn/2) * (g - 1) * d2.PLANK_CONST * v * d2.awgs[0][2],9)
     pase_vec.append(pase)
 
@@ -204,7 +211,11 @@ for i in range(11):
 tab7 = []
 tab7.insert(0 , ["Par", "OSNR [dB]", "OSNR Requerida [dB]", "Valor de penalidade", "Margem"])
 #print(sum(pase_vec)*2)
-comp = [54.864, 28.136, 49.364, 22.366, 35.182, 12.828, 43.692, 22.308, 63, 31]
+#comp = [83, 72, 49, 66, 63, 31] # 94 7
+#comp = [54.864, 28.136, 72, 49, 66, 63, 31] # 83 8
+#comp = [54.864, 28.136, 49.364, 22.366, 49, 66, 63, 31] # 72 9
+#comp = [54.864, 28.136, 49.364, 22.366, 49, 43.692, 22.308, 63, 31] # 66 10
+comp = [54.864, 28.136, 49.364, 22.366, 35.182, 12.828, 43.692, 22.308, 63, 31] # 49 11
 leff = [d2.leff(i) for i in comp]
 
 def potencia():
@@ -245,9 +256,3 @@ print(tabulate(tab7, tablefmt="fancy_grid", stralign="center"))
 
 #print(d2.banda_inf[1])
 #print(d2.banda_sup[1])
-print(d2.alfanpm)
-
-print(f'inf: {d2.banda_inf[1]}')
-print(f'sup: {d2.banda_sup[1]}')
-
-print(d2.banda_inf[1])
